@@ -1,0 +1,30 @@
+{
+  "name": "weatherapplicationbackend",
+  "version": "1.0.0",
+  "description": "Workfolio Interview Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ganeshkandhan17/WeatherApplication.git"
+  },
+  "keywords": [
+    "WeatherApplication"
+  ],
+  "author": "GANESH KANDHAN V M",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ganeshkandhan17/WeatherApplication/issues"
+  },
+  "homepage": "https://github.com/ganeshkandhan17/WeatherApplication#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "express": "^4.21.2",
+    "uuid": "^11.0.5"
+  }
+}
