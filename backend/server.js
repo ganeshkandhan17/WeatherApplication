@@ -21,9 +21,9 @@ app.post("/getweather", (req, res) => {
   getWeather(search)
     .then((data) => data.json())
     .then((data) => {
-      data.list.map((item)=>{
-        console.log(item.dt);
-      })
+        data.list.forEach((element) => {
+          console.log(element.main);
+        }); 
     });
   res.send("Data received");
 });
