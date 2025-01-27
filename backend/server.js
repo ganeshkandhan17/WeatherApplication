@@ -4,6 +4,14 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 let getWeather = require("./Methods/getWeather");
 let databaseConnectivity = require("./Methods/dataBaseConnectivity");
+let { getID, getUniqueID } = require("./Methods/getID");
+let {
+  addNewData,
+  deleteAllData,
+  getHistory,
+} = require("./Methods/dbSchemeModels");
+getHistory(1234);
+// addNewData("1234", "Delhi", "2021-09-15");
 dotenv.config();
 const app = express();
 databaseConnectivity();
@@ -21,12 +29,11 @@ app.post("/getweather", (req, res) => {
   getWeather(search)
     .then((data) => data.json())
     .then((data) => {
-        data.list.forEach((element) => {
-          console.log(element.main);
-        }); 
+      console.log(data);
+      res.send(data);
     });
-  res.send("Data received");
 });
+
 app.on("unCaughtException", (err) => {
   console.log(`Error: ${err.message}`);
 });

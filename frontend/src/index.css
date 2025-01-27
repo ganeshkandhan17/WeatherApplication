@@ -15,7 +15,7 @@ body {
 }
 
 #root {
-  width: 70%;
+  width: 90%;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -26,6 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
   background-color: rgb(231, 231, 231);
   width: 100%;
   padding: 20px;
@@ -56,6 +57,78 @@ button {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  width: 40%;
+}
+
+.container_1_2 {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+.container_1_2_1,
+.container_1_2_3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  width: 40%;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 20px 0 20px 0;
+  gap: 10px;
+}
+
+.container_1_2_2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: solid black 2px;
+  width: 60%;
+  border-radius: 5px;
+}
+
+.container_1_2_1_1 {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+}
+
+.Humidity,
+.Wind {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  gap: 10px;
+}
+
+.weatherIcon {
+  width: 150px;
+  height: 150px;
+}
+
+.description {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.HumidityText,
+.WindText {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.HumidityValue,
+.WindValue {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .loadingScreen {
@@ -75,14 +148,14 @@ button {
   top: 0;
 }
 
-.loadingIcon{
+.loadingIcon {
   animation: loadingrotate 1s infinite;
 }
 @keyframes loadingrotate {
-  from{
+  from {
     transform: rotate(0);
   }
-  to{
+  to {
     transform: rotate(360deg);
   }
 }
