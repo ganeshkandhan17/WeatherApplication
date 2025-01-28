@@ -19,6 +19,7 @@ function addNewData(id, city, timestamp) {
         console.log("Data not saved");
         throw new Error("Data not saved");
       } else {
+        console.log(`data saved ${id} ${city} ${timestamp}`);
         return true;
       }
     })
@@ -34,6 +35,7 @@ function deleteAllData(id) {
       if (data.deletedCount === 0) {
         throw new Error("Data not deleted");
       } else {
+        console.log("Data deleted " + id);
         return true;
       }
     })
@@ -43,14 +45,8 @@ function deleteAllData(id) {
 }
 
 function getHistory(id) {
-  historyModel
+  return historyModel
     .find({ user_Id: id })
-    .then((data) => {
-      return data;
-    })
-    .catch((err) => {
-      console.log(`Error: ${err.message}`);
-    });
 }
 
 module.exports = { addNewData, deleteAllData, getHistory };
