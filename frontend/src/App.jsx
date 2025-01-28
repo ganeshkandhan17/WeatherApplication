@@ -71,6 +71,8 @@ function App() {
           }
           setLoading(false);
         }
+      }).catch((err)=>{
+        console.log(`Error in fetching weather ${err}`)
       });
   }, [loading]);
 
@@ -86,6 +88,8 @@ function App() {
       .then((data) => data.json())
       .then((data) => {
         setHistory(data);
+      }).catch((err)=>{
+        console.log(`Error in fetching history from server`)
       });
   }, []);
 
@@ -163,13 +167,14 @@ function App() {
                     <th>Time</th>
                   </tr>
                 </thead>
-                <tbody>{
-                  history.map((item)=>(
+                <tbody>
+                  {history.map((item) => (
                     <tr>
                       <td>{item.city_name}</td>
                       <td>{item.timestamp}</td>
                     </tr>
-                  ))}</tbody>
+                  ))}
+                </tbody>
               </table>
             </div>
 
@@ -182,6 +187,8 @@ function App() {
                     "Content-Type": "application/json",
                   },
                   body: JSON.stringify({ userId: Cookies.get("userId") }),
+                }).then((data)=>{
+                  
                 });
               }}
             >
