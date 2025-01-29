@@ -45,8 +45,7 @@ function deleteAllData(id) {
 }
 
 function getHistory(id) {
-  return historyModel
-    .find({ user_Id: id })
+  return historyModel.find({ user_Id: id });
 }
 
 module.exports = { addNewData, deleteAllData, getHistory };

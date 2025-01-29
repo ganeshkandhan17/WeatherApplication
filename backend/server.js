@@ -2,7 +2,7 @@ let express = require("express");
 let dotenv = require("dotenv");
 let mongoose = require("mongoose");
 let cors = require("cors");
-let getWeather = require("./Methods/getWeather");
+let { getWeather, getForecast } = require("./Methods/getWeather");
 let databaseConnectivity = require("./Methods/dataBaseConnectivity");
 let { getUniqueID } = require("./Methods/getID");
 let {
@@ -31,6 +31,7 @@ app.post("/getweather", (req, res) => {
   getWeather(search)
     .then((data) => data.json())
     .then((data) => {
+      console.log(data);
       res.send(data);
     });
 });
@@ -40,10 +41,6 @@ app.post("/gethistory", (req, res) => {
   getHistory(userId).then((data) => {
     res.send(data);
   });
-});
-
-app.get("/getid", (req, res) => {
-  res.send({ id: getUniqueID() });
 });
 
 app.post("/addhistory", (req, res) => {
