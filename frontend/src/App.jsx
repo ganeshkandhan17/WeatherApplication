@@ -170,22 +170,16 @@ function App() {
     });
   }
   useEffect(() => {
-    if (loading) {
+    // if (loading) {
       setWeather(search);
       reloadHistory();
       setGraph(search);
-    }
+    
   }, [loading]);
 
   useEffect(() => {
     celcuisToFahrenheit(temperature);
   }, [temperature]);
-
-  useEffect(() => {
-    setWeather(search);
-    reloadHistory();
-    setGraph(search);
-  }, [loading]);
 
   useEffect(() => {
     if (!isUserIdExist()) {
