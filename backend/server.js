@@ -31,9 +31,12 @@ app.post("/getweather", (req, res) => {
   getWeather(search)
     .then((data) => data.json())
     .then((data) => {
-      console.log(data);
       res.send(data);
     });
+});
+
+app.get("/getid", (req, res) => {
+  res.send({ id: getUniqueID() });
 });
 
 app.post("/gethistory", (req, res) => {
@@ -54,6 +57,16 @@ app.post("/deletehistory", (req, res) => {
   let userId = req.body.userId;
   deleteAllData(userId);
 });
+
+app.post("/getforecast", (req, res) => {
+  let search = req.body.search;
+  getForecast(search)
+    .then((data) => data.json())
+    .then((data) => {
+      res.send(data);
+    });
+});
+
 app.on("unCaughtException", (err) => {
   console.log(`Error: ${err.message}`);
 });

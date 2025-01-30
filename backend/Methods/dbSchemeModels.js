@@ -32,11 +32,10 @@ function deleteAllData(id) {
   historyModel
     .deleteMany({ user_Id: id })
     .then((data) => {
-      if (data.deletedCount === 0) {
+      if (data.deletedCount == 0) {
         throw new Error("Data not deleted");
       } else {
         console.log("Data deleted " + id);
-        return true;
       }
     })
     .catch((err) => {

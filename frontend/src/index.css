@@ -68,6 +68,7 @@ button {
 
 .container_1_2_1,
 .container_1_2_3 {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,6 +83,7 @@ button {
 .container_1_2_2 {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-color: rgb(255, 255, 255);
   border: solid black 2px;
@@ -142,6 +144,7 @@ button {
   position: absolute;
   top: -100%;
   transition: all ease-in-out 1s;
+  z-index: 1;
 }
 
 .loadingScreen.active {
@@ -159,7 +162,7 @@ button {
   position: absolute;
   top: -100%;
   transition: all ease-in-out 1s;
-  z-index: 1;
+  z-index: 2;
 }
 
 .citynotfound.active {
@@ -195,6 +198,20 @@ th {
   margin: 2%;
 }
 
+.toggleButton {
+  position: absolute;
+  height: fit-content;
+  width: fit-content;
+  padding: 7px;
+  right: 0;
+  top: 0;
+  margin: 6px;
+  transition: 0.2s ease-in-out;
+}
+
+.toggleButton.active {
+  background-color: rgb(230, 230, 230);
+}
 @keyframes loadingrotate {
   from {
     transform: rotate(0);
@@ -203,17 +220,8 @@ th {
     transform: rotate(360deg);
   }
 }
-/* @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   #root {
     width: 100%;
   }
-  .container_1 {
-    width: 100%;
-  }
-  input {
-    width: 100%;
-  }
-  button {
-    width: 20%;
-  }
-} */
+}
