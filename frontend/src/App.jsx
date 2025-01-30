@@ -170,9 +170,11 @@ function App() {
     });
   }
   useEffect(() => {
+    if(loading){
     setWeather(search);
     reloadHistory();
     setGraph(search);
+    }
   }, [loading]);
 
   useEffect(() => {
