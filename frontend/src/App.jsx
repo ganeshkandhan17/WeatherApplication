@@ -47,7 +47,7 @@ function App() {
 
   function celcuisToFahrenheit(c) {
     let f = c * 1.8 + 32;
-    setFTemp(f);
+    setFTemp(f.toFixed(2));
   }
 
   function setGraph(search) {
@@ -170,10 +170,10 @@ function App() {
     });
   }
   useEffect(() => {
-    if(loading){
-    setWeather(search);
-    reloadHistory();
-    setGraph(search);
+    if (loading) {
+      setWeather(search);
+      reloadHistory();
+      setGraph(search);
     }
   }, [loading]);
 
