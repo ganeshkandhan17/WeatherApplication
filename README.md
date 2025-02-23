@@ -28,4 +28,5 @@ Easily track weather conditions and forecasts with this full-stack web applicati
 </ul>
 
 <h3>📸 Screenshots:</h3>
+![image](https://github.com/user-attachments/assets/2b643717-c338-45fa-a800-7e9ac64e7ba5)
 
