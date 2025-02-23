@@ -201,7 +201,7 @@ th {
 .toggleButton {
   position: absolute;
   height: fit-content;
-  width: fit-content;
+  width: 35px;
   padding: 7px;
   right: 0;
   top: 0;

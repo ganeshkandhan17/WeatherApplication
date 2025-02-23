@@ -26,6 +26,10 @@ app.get("/test", (req, res) => {
   res.send("Server is running");
 });
 
+app.get("/", (req, res) => {
+  res.send("Server is running");
+});
+
 app.post("/getweather", (req, res) => {
   let search = req.body.search;
   getWeather(search)

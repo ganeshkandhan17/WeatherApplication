@@ -23,7 +23,7 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
+const backendurl=import.meta.env.VITE_BACKEND_URL;
 function App() {
   let tempdate = new Date();
   tempdate = tempdate.toString().slice(0, 21);
@@ -76,7 +76,7 @@ function App() {
   }
 
   function deletHistory() {
-    fetch("http://127.0.0.1:3000/deletehistory", {
+    fetch(`${backendurl}/deletehistory`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -120,7 +120,7 @@ function App() {
     }
   }
   function reloadHistory() {
-    fetch("http://127.0.0.1:3000/gethistory", {
+    fetch(`${backendurl}/gethistory`, {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userId: Cookies.get("userId") }),
@@ -135,14 +135,14 @@ function App() {
   }
 
   function getUserId() {
-    fetch("http://127.0.0.1:3000/getid")
+    fetch(`${backendurl}/getid`)
       .then((data) => data.json())
       .then((data) => {
         Cookies.set("userId", data.id, { expires: 365 });
       });
   }
   function getWeather(search) {
-    return fetch("http://127.0.0.1:3000/getweather", {
+    return fetch(`${backendurl}/getweather`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -151,7 +151,7 @@ function App() {
     });
   }
   function getForecast(search) {
-    return fetch("http://127.0.0.1:3000/getforecast", {
+    return fetch(`${backendurl}/getforecast`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -161,7 +161,7 @@ function App() {
   }
 
   function addhistory(id, city) {
-    fetch("http://127.0.0.1:3000/addhistory", {
+    fetch(`${backendurl}/addhistory`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -240,7 +240,7 @@ function App() {
                 setUnit(!unit);
               }}
             >
-              <strong>F</strong>
+              <strong>{unit ? "C": "F"}</strong>
             </button>
             <h2 className="city">{city}</h2>
             <p className="date">{date}</p>

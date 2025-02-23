@@ -19,6 +19,7 @@
 /frontend/*.njsproj
 /frontend/*.sln
 /frontend/*.sw?
+/frontend/.env
 
 #Backend
 /backend/node_modules
