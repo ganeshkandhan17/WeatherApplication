@@ -7,8 +7,6 @@
 /frontend/pnpm-debug.log*
 /frontend/lerna-debug.log*
 /frontend/node_modules
-/frontend/dist
-/frontend/dist-ssr
 /frontend/*.local
 /frontend/.vscode/*
 /frontend/!.vscode/extensions.json
@@ -19,8 +17,8 @@
 /frontend/*.njsproj
 /frontend/*.sln
 /frontend/*.sw?
-/frontend/.env
+/frontend/.env*
 
 #Backend
 /backend/node_modules
-/backend/.env
+/backend/.env*
